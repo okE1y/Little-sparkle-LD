@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WalkControll : MonoBehaviour
 {
+    public bool WalkActive { get; set; } = true;
+
     public float rawDirection { get; private set; }
 
     private float startDirection = 0f;
@@ -44,6 +46,9 @@ public class WalkControll : MonoBehaviour
 
     private void Update()
     {
-        UpdateVelocity();
+        if (WalkActive)
+        {
+            UpdateVelocity();
+        }
     }
 }

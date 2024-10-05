@@ -6,6 +6,8 @@ public class JumpControll : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
 
+    public bool JumpActive { get; set; } = true;
+
     [SerializeField, Range(0.5f, 1f)] private float MinNormalY;
 
     public bool Grounded { get; private set; }
@@ -54,12 +56,17 @@ public class JumpControll : MonoBehaviour
 
             jumpSpeedVector.y = jumpStrenght;
 
-            if (_jumped == true)
+            if (JumpActive && _jumped == true)
             {
                 _rigidbody2D.velocity += jumpSpeedVector;
                 StartCoroutine(JumpBuffing());
             }
         }
+    }
+
+    public void StopJump()
+    {
+        StopAllCoroutines();
     }
 
     private IEnumerator JumpBuffing()

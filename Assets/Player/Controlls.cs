@@ -11,9 +11,11 @@ public class Controlls : MonoBehaviour
     private WalkControll _walkControll;
     private JumpControll _jumpControll;
 
+    public bool ControllsActive { get; set; } = true;
+
     public void OnWalk(InputAction.CallbackContext context)
     {
-        if (context.started || context.canceled || context.performed)
+        if (ControllsActive && (context.started || context.canceled || context.performed))
         {
             _walkControll.SetDirection(context.ReadValue<float>());
         }
@@ -21,8 +23,11 @@ public class Controlls : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started) _jumpControll.ChangeJumpState(true);
-        if (context.canceled) _jumpControll.ChangeJumpState(false);
+        if (ControllsActive)
+        {
+            if (context.started) _jumpControll.ChangeJumpState(true);
+            if (context.canceled) _jumpControll.ChangeJumpState(false);
+        }
     }
 
     private void Start()

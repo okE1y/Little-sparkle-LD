@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
 {
     public void ActivateInteraction(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.started && ActiveInteraction)
         {
             InvokeNearesInteraction();
         }
@@ -16,6 +16,8 @@ public class PlayerInteract : MonoBehaviour
 
     private List<Interaction> interactions = new List<Interaction>();
     private Transform GetTransform;
+
+    public bool ActiveInteraction = true;
 
     private void Start()
     {

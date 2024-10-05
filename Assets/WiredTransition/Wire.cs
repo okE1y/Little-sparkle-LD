@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Wire : MonoBehaviour
 {
-    [SerializeField] private Transform entry;
-    [SerializeField] private Transform end;
-    [SerializeField] private List<Transform> nodes = new List<Transform>();
+    [SerializeField] public Transform entry;
+    [SerializeField] public Transform end;
+    [SerializeField] public List<Transform> nodes = new List<Transform>();
 
     private LineRenderer lineRenderer;
 
