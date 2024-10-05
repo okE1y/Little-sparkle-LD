@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - RoomManager
+  - EnergySpark
   layers:
   - Default
   - TransparentFX
@@ -14,8 +15,8 @@ TagManager:
   - UI
   - Player
   - Collision
-  - 
-  - 
+  - Sparks
+  - Room
   - 
   - 
   - 

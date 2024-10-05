@@ -24,6 +24,7 @@ public class Room : MonoBehaviour
         if (collision.TryGetComponent<RoomControllable>(out roomControllable))
         {
             Entities.Add(roomControllable);
+            Debug.Log(collision.name);
         }
     }
 
@@ -44,7 +45,7 @@ public class Room : MonoBehaviour
     {
         foreach (var i in Entities)
         {
-            i.Reset();
+            i.ResetEntity();
         }
     }
 
@@ -74,5 +75,5 @@ public interface RoomControllable
 {
     public void Disable();
     public void Enable();
-    public void Reset();
+    public void ResetEntity();
 }

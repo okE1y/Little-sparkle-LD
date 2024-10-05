@@ -21,6 +21,24 @@ public class RoomManager : MonoBehaviour
         _currentRoom = Rooms.FindIndex((x) => x.Equals(to));
     }
 
+    private void Start()
+    {
+        StartCoroutine(WaitTwoFrames());
+    }
+
+    private IEnumerator WaitTwoFrames()
+    {
+        yield return null;
+        yield return null;
+        for (int i = 0; i < Rooms.Count; i++)
+        {
+            if (i != CurrentRoom)
+            {
+                Rooms[i].DisableRoom();
+            }
+        }
+    }
+
 #if UNITY_EDITOR
 
     private void OnDrawGizmos()
