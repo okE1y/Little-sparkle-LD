@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 32740672}
   - component: {fileID: 32740673}
   - component: {fileID: 32740674}
+  - component: {fileID: 32740675}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -427,6 +428,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _energyCount: 0
+--- !u!114 &32740675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32740666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b370510fef0f9014a96caa195b03b861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &147795151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1050,6 +1063,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d57c0383-d5d5-43bb-8935-be9d095cc25f
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 32740674}
+        m_TargetAssemblyTypeName: PlayerEnergy, Assembly-CSharp
+        m_MethodName: GetBackEnergy
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8677fcb0-3920-4527-9f00-6e7625b45cb7
+    m_ActionName: Player/ReturnEnergy[/Keyboard/r,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 32740675}
+        m_TargetAssemblyTypeName: PlayerInteract, Assembly-CSharp
+        m_MethodName: ActivateInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bdecf26f-9185-4d0e-87ef-0f83d8871ae4
+    m_ActionName: Player/Interatcion[/Keyboard/e,/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Default
   m_DefaultActionMap: Player
