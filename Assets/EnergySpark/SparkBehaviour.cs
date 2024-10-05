@@ -40,6 +40,7 @@ public class SparkBehaviour : MonoBehaviour
     public void StopSpark()
     {
         StopAllCoroutines();
+        Walking = false;
         BehaviourEnabled = false;
     }
 

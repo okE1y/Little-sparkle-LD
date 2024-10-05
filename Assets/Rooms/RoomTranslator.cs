@@ -9,11 +9,13 @@ public class RoomTranslator : MonoBehaviour
     [SerializeField] private Room RoomTo;
     private RoomManager roomManager;
     private Transform PlayerTransform;
+    private PlayerEnergy playerEnergy;
 
     private void Start()
     {
         roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager>();
         PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        playerEnergy = PlayerTransform.GetComponent<PlayerEnergy>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +24,7 @@ public class RoomTranslator : MonoBehaviour
         {
             PlayerTransform.position = TeleportToPoint.position;
             roomManager.TransferPlayer(RoomFrom, RoomTo);
+            playerEnergy.RemoveEnergy();
         }
     }
 }

@@ -24,7 +24,6 @@ public class Room : MonoBehaviour
         if (collision.TryGetComponent<RoomControllable>(out roomControllable))
         {
             Entities.Add(roomControllable);
-            Debug.Log(collision.name);
         }
     }
 
