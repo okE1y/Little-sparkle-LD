@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class RoomTranslator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform TeleportToPoint;
+    [SerializeField] private Room RoomFrom;
+    [SerializeField] private Room RoomTo;
+    private RoomManager roomManager;
+    private Transform PlayerTransform;
+
+    private void Start()
     {
-        
+        roomManager = GameObject.FindGameObjectWithTag("RoomManager").GetComponent<RoomManager>();
+        PlayerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            PlayerTransform.position = TeleportToPoint.position;
+            roomManager.TransferPlayer(RoomFrom, RoomTo);
+        }
     }
 }

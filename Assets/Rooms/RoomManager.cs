@@ -12,6 +12,15 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private int _currentRoom;
     public int CurrentRoom { get => _currentRoom; }
 
+    public void TransferPlayer(Room from, Room to)
+    {
+        from.DisableRoom();
+        to.EnableRoom();
+        to.ResetRoom();
+
+        _currentRoom = Rooms.FindIndex((x) => x.Equals(to));
+    }
+
 #if UNITY_EDITOR
 
     private void OnDrawGizmos()

@@ -10,14 +10,69 @@ public class Room : MonoBehaviour
 
     private Transform _transform;
 
+    private List<RoomControllable> Entities = new List<RoomControllable>();
+
     public Transform GetTransform { get
     {
         if (_transform == null) _transform = transform;
         return _transform;
     } }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        RoomControllable roomControllable;
+        if (collision.TryGetComponent<RoomControllable>(out roomControllable))
+        {
+            Entities.Add(roomControllable);
+        }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(WaitTwoFrames());
+    }
+
+    public void DisableRoom()
+    {
+        foreach (var i in Entities)
+        {
+            i.Disable();
+        }
+    }
+
+    public void ResetRoom()
+    {
+        foreach (var i in Entities)
+        {
+            i.Reset();
+        }
+    }
+
+    public void EnableRoom()
+    {
+        foreach (var i in Entities)
+        {
+            i.Enable();
+        }
+    }
+
+    private IEnumerator WaitTwoFrames()
+    {
+        yield return null;
+        yield return null;
+        GetComponent<Collider2D>().enabled = false;
+        yield break;
+    }
+
     public Vector2 Pos { get => GetTransform.position; }
 
     public Vector2 GetMinInWorld() => CameraMinPoint + Pos;
     public Vector2 GetMaxInWorld() => CameraMaxPoint + Pos;
+}
+
+public interface RoomControllable
+{
+    public void Disable();
+    public void Enable();
+    public void Reset();
 }
