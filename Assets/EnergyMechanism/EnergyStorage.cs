@@ -67,6 +67,9 @@ public class EnergyStorage : MonoBehaviour, IInteractionObject, RoomControllable
 
             eventAssigned = false;
         }
+
+
+        ChangeMechanismStatus();
     }
 
     private void ChangeMechanismStatus()

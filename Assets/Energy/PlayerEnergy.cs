@@ -11,13 +11,15 @@ public class PlayerEnergy : MonoBehaviour
     [SerializeField] private int _energyCount;
     public int EnergyCount { get => _energyCount; }
 
+    public bool EnergyGetBackAcive = true;
+
     public void AddEnergy(int energy) => _energyCount += energy;
 
     public void RemoveEnergy() => _energyCount = 0;
 
     public void GetBackEnergy(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (EnergyGetBackAcive && context.started)
         {
             ReturnEnergy.Invoke();
         }

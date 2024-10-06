@@ -27,13 +27,14 @@ public class WireController : MonoBehaviour
 
     public void ActivateWire(Wire activatingWire, WireEntry entry)
     {
-        if ( playerEnergy.EnergyCount != 0)
+        if (activatingWire.WireActive && playerEnergy.EnergyCount != 0)
         {
             currentWire = activatingWire;
 
             playerInteract.ActiveInteraction = false;
             walkControll.WalkActive = false;
             jumpControll.JumpActive = false;
+            playerEnergy.EnergyGetBackAcive = false;
             _rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 
             transform.position = entry.GetTransform.position;
@@ -92,6 +93,7 @@ public class WireController : MonoBehaviour
         playerInteract.ActiveInteraction = true;
         walkControll.WalkActive = true;
         jumpControll.JumpActive = true;
+        playerEnergy.EnergyGetBackAcive = true;
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
 
         yield break;
