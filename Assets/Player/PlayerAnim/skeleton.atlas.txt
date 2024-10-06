@@ -1,0 +1,99 @@
+
+skeleton.png
+size: 2378,3836
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ГГ/Обычный слой 6 Сведено
+  rotate: true
+  xy: 2, 2
+  size: 1124, 2374
+  orig: 2370, 2706
+  offset: 608, 303
+  index: -1
+ГГ/вайр — копия
+  rotate: false
+  xy: 2, 1128
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+ГГ/вайр
+  rotate: false
+  xy: 2, 1128
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 2374,2710
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ГГ/Обычный слой 3
+  rotate: false
+  xy: 2, 2
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+
+skeleton3.png
+size: 2374,2710
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ГГ/Обычный слой 7 Сведено
+  rotate: false
+  xy: 2, 2
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+ГГ/Обычный слой 7 Сведено — копия
+  rotate: false
+  xy: 2, 2
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+
+skeleton4.png
+size: 2374,2710
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ГГ/Обычный слой 8 Сведено
+  rotate: false
+  xy: 2, 2
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+
+skeleton5.png
+size: 2374,2710
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ГГ/Обычный слой 9 Сведено
+  rotate: false
+  xy: 2, 2
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1
+
+skeleton6.png
+size: 2374,2710
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ГГ/Обычный слой 10
+  rotate: false
+  xy: 2, 2
+  size: 2370, 2706
+  orig: 2370, 2706
+  offset: 0, 0
+  index: -1

@@ -11,6 +11,7 @@ public class WalkControll : MonoBehaviour
     private float startDirection = 0f;
 
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Animator animator;
     [SerializeField] private ValueSmoother _valueSmoother;
 
     [SerializeField] private float Speed = 6f;
@@ -49,6 +50,11 @@ public class WalkControll : MonoBehaviour
         if (WalkActive)
         {
             UpdateVelocity();
+            animator.SetBool("Walk", startDirection != 0);
+        }
+        else
+        {
+            animator.SetBool("Walk", false);
         }
     }
 }

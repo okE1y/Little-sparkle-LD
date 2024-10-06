@@ -5,6 +5,7 @@ using UnityEngine;
 public class JumpControll : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Animator animator;
 
     public bool JumpActive { get; set; } = true;
 
@@ -61,6 +62,15 @@ public class JumpControll : MonoBehaviour
                 _rigidbody2D.velocity += jumpSpeedVector;
                 StartCoroutine(JumpBuffing());
             }
+        }
+
+        if (JumpActive)
+        {
+            animator.SetBool("Fall", !Grounded);
+        }
+        else
+        {
+            animator.SetBool("Fall", false);
         }
     }
 

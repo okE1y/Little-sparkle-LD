@@ -15,6 +15,8 @@ public class WireController : MonoBehaviour
 
     private Wire currentWire;
 
+    [SerializeField] private Animator animator;
+
     private void Start()
     {
         playerInteract = GetComponent<PlayerInteract>();
@@ -38,6 +40,8 @@ public class WireController : MonoBehaviour
             _rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 
             transform.position = entry.GetTransform.position;
+
+            animator.SetTrigger("BeginWire");
 
             StartCoroutine(TransferPlayerByWire(entry.GetTransform.position == currentWire.entry.position));
         }
@@ -95,6 +99,8 @@ public class WireController : MonoBehaviour
         jumpControll.JumpActive = true;
         playerEnergy.EnergyGetBackAcive = true;
         _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+
+        animator.SetTrigger("EndWire");
 
         yield break;
     }
