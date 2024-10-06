@@ -999,6 +999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergySpark (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3220728891539662644, guid: 741799fe41d6a3540a39e6e4762accbf, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741799fe41d6a3540a39e6e4762accbf, type: 3}
 --- !u!1001 &419238715821848629
@@ -1120,6 +1124,10 @@ PrefabInstance:
     - target: {fileID: 1580663267574400947, guid: 741799fe41d6a3540a39e6e4762accbf, type: 3}
       propertyPath: m_Name
       value: EnergySpark
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220728891539662644, guid: 741799fe41d6a3540a39e6e4762accbf, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 741799fe41d6a3540a39e6e4762accbf, type: 3}

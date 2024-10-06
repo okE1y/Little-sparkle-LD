@@ -5,6 +5,7 @@ using UnityEngine;
 public class SparkBehaviour : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Animator animator;
 
     [SerializeField] private float SparkSpeed;
     [SerializeField] private float MaxPause;
@@ -16,6 +17,8 @@ public class SparkBehaviour : MonoBehaviour
 
     private bool Walking = false;
     private float direction = 1;
+
+    public float Direction { get => direction; }
 
     private Vector3 speedVector = Vector3.zero;
 
@@ -55,6 +58,7 @@ public class SparkBehaviour : MonoBehaviour
     {
         while (true)
         {
+            animator.SetBool("Walk", Walking);
             yield return new WaitForSeconds(Random.Range(MinPause, MaxPause));
 
             //randomize 1 -1
@@ -62,6 +66,8 @@ public class SparkBehaviour : MonoBehaviour
             else direction = 1;
 
             Walking = true;
+
+            animator.SetBool("Walk", Walking);
 
             yield return new WaitForSeconds(Random.Range(MinWalkingTime, MaxWalkingTime));
 

@@ -1,0 +1,20 @@
+
+skeleton.png
+size: 1683,1500
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+спарклы/Обычный слой 3 Сведено
+  rotate: false
+  xy: 1016, 179
+  size: 665, 1319
+  orig: 1012, 1496
+  offset: 165, 56
+  index: -1
+спарклы/Обычный слой 4
+  rotate: false
+  xy: 2, 2
+  size: 1012, 1496
+  orig: 1012, 1496
+  offset: 0, 0
+  index: -1
