@@ -8,6 +8,9 @@ public class Wire : MonoBehaviour
     [SerializeField] public Transform end;
     [SerializeField] public List<Transform> nodes = new List<Transform>();
 
+    [SerializeField] private bool wireActive = true;
+    public bool WireActive { get => wireActive; }
+
     private LineRenderer lineRenderer;
 
     private void Start()
@@ -34,6 +37,15 @@ public class Wire : MonoBehaviour
             lineRenderer.SetPosition(1, end.position);
         }
         lineRenderer.rendererPriority = 1;
+
+        lineRenderer.enabled = wireActive;
+    }
+
+    public void SetWireActive(bool active)
+    {
+        lineRenderer.enabled = active;
+
+        wireActive = active;
     }
 
 #if UNITY_EDITOR
