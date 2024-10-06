@@ -29,7 +29,7 @@ public class Room : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(WaitTwoFrames());
+        StartCoroutine(WaitOneFrames());
     }
 
     public void DisableRoom()
@@ -56,9 +56,8 @@ public class Room : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitTwoFrames()
+    private IEnumerator WaitOneFrames()
     {
-        yield return null;
         yield return null;
         GetComponent<Collider2D>().enabled = false;
         yield break;
