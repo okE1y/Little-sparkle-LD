@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class PlayerEnergy : MonoBehaviour
 {
-    public Event ReturnEnergy = new Event();
+    public UnityEvent ReturnEnergy = new UnityEvent();
 
     [SerializeField] private int _energyCount;
     public int EnergyCount { get => _energyCount; }
@@ -18,7 +19,7 @@ public class PlayerEnergy : MonoBehaviour
     {
         if (context.started)
         {
-            ReturnEnergy.Use();
+            ReturnEnergy.Invoke();
         }
     }
 

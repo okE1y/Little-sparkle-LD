@@ -27,7 +27,7 @@ public class WireController : MonoBehaviour
 
     public void ActivateWire(Wire activatingWire, WireEntry entry)
     {
-        if (playerEnergy.EnergyCount != 0)
+        if ( playerEnergy.EnergyCount != 0)
         {
             currentWire = activatingWire;
 
