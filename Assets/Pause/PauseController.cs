@@ -10,6 +10,8 @@ public class PauseController : MonoBehaviour
     private MenuMenager menuMenager;
     private Controlls controlls;
 
+    public bool ActivePause = true;
+
     private void Start()
     {
         PauseCanvas = GetComponent<Canvas>();
@@ -33,18 +35,21 @@ public class PauseController : MonoBehaviour
 
     public void OpenOrClosePause(InputAction.CallbackContext context)
     {
-        if (!pauseEnabled)
+        if (ActivePause && context.started)
         {
-            pauseEnabled = true;
-            Time.timeScale = 0f;
+            if (!pauseEnabled)
+            {
+                pauseEnabled = true;
+                Time.timeScale = 0f;
 
-            controlls.ControllsActive = false;
-            menuMenager.ActiveMenu = true;
-            PauseCanvas.enabled = true;
-        }
-        else
-        {
-            ResumePause();
+                controlls.ControllsActive = false;
+                menuMenager.ActiveMenu = true;
+                PauseCanvas.enabled = true;
+            }
+            else
+            {
+                ResumePause();
+            }
         }
     }
 }
