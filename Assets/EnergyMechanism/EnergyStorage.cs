@@ -12,7 +12,7 @@ public class EnergyStorage : MonoBehaviour, IInteractionObject, RoomControllable
 
     public bool StorageActive { get => storageActive; }
 
-    [SerializeField] private int MaxEnergy = 1;
+    [SerializeField] public int MaxEnergy = 1;
 
     [SerializeField] private int currentEnergy;
     public int CurrentEnergy { get => currentEnergy; }
