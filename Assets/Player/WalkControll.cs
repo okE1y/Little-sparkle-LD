@@ -13,6 +13,8 @@ public class WalkControll : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private Animator animator;
     [SerializeField] private ValueSmoother _valueSmoother;
+    [SerializeField] private AudioControll audioControll;
+    [SerializeField] private JumpControll jumpControll;
 
     [SerializeField] private float Speed = 6f;
     [SerializeField] private float Inert = 10f;
@@ -51,10 +53,21 @@ public class WalkControll : MonoBehaviour
         {
             UpdateVelocity();
             animator.SetBool("Walk", startDirection != 0);
+
+            if (startDirection != 0 && jumpControll.Grounded)
+            {
+                audioControll.PlayWalk();
+            }
+            else
+            {
+                if (audioControll.walkPlaing)
+                audioControll.Stop();
+            }
         }
         else
         {
             animator.SetBool("Walk", false);
+            audioControll.Stop();
         }
     }
 }

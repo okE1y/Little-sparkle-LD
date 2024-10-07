@@ -8,6 +8,8 @@ public class PlayerEnergy : MonoBehaviour
 {
     public UnityEvent ReturnEnergy = new UnityEvent();
 
+    [SerializeField] private AudioControll audioControll;
+
     [SerializeField] private int _energyCount;
     public int EnergyCount { get => _energyCount; }
 
@@ -22,17 +24,23 @@ public class PlayerEnergy : MonoBehaviour
         if (EnergyGetBackAcive && context.started)
         {
             ReturnEnergy.Invoke();
+            audioControll.PlayeMechanism();
         }
     }
 
     public int GetEnergy(int Count)
     {
+        if(_energyCount != 0 || Count != 0)
+            audioControll.PlayeMechanism();
+
         _energyCount -= Count;
         if (_energyCount < 0)
         {
             Count += _energyCount;
             _energyCount = 0;
         }
+
+
 
         return Count;
     }

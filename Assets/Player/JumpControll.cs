@@ -19,6 +19,7 @@ public class JumpControll : MonoBehaviour
     [SerializeField] private float jumpMaxTime;
     [SerializeField] private int punchCount;
     [SerializeField] private float buffMultlipier;
+    [SerializeField] private AudioControll audioControll;
     private Vector2 jumpSpeedVector;
 
     private void Start()
@@ -59,6 +60,7 @@ public class JumpControll : MonoBehaviour
 
             if (JumpActive && _jumped == true)
             {
+                audioControll.PlayJump();
                 _rigidbody2D.velocity += jumpSpeedVector;
                 StartCoroutine(JumpBuffing());
             }

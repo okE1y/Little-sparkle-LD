@@ -11,6 +11,8 @@ public class WireController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private Transform GetTransform;
 
+    [SerializeField] private AudioControll audioControll;
+
     [SerializeField] private float wireSpeed;
 
     private Wire currentWire;
@@ -31,6 +33,7 @@ public class WireController : MonoBehaviour
     {
         if (activatingWire.WireActive && playerEnergy.EnergyCount != 0)
         {
+            audioControll.PlayWire();
             currentWire = activatingWire;
 
             playerInteract.ActiveInteraction = false;

@@ -6,6 +6,16 @@ public class DoorScript : MonoBehaviour
 {
     [SerializeField] private Animator animator;
 
+    [SerializeField] private bool Opened;
+
+    private void Start()
+    {
+        if (Opened)
+        {
+            OpenDoor();
+        }
+    }
+
     public void OpenDoor()
     {
         animator.SetBool("Opened", true);

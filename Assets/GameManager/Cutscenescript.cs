@@ -6,6 +6,8 @@ public class Cutscenescript : MonoBehaviour
 {
     public Animator animator;
 
+    public AudioSource audioSource;
+
     public bool Walk;
 
     public bool Fall;
@@ -13,6 +15,8 @@ public class Cutscenescript : MonoBehaviour
     public bool BeginWire;
 
     public bool EndWire;
+
+    public bool PlayAudio;
 
     private void Update()
     {
@@ -26,8 +30,11 @@ public class Cutscenescript : MonoBehaviour
             animator.SetTrigger("EndWire");
 
 
+        if (PlayAudio)
+            audioSource.Play();
 
         BeginWire = false;
         EndWire = false;
+        PlayAudio = false;
     }
 }

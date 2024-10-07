@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioListener CutsceneaudioListener;
     [SerializeField] private Animator BlackScreen;
 
+    [SerializeField] private AudioSource SoundTrack;
+
     private void Start()
     {
         BlackScreen.SetBool("Black", false);
@@ -32,6 +34,10 @@ public class GameManager : MonoBehaviour
             controlls.ControllsActive = false;
             cameraControll.CameraControlled = false;
             StartCoroutine(StopPlayer());
+        }
+        else
+        {
+            SoundTrack.Play();
         }
     }
 
@@ -65,5 +71,6 @@ public class GameManager : MonoBehaviour
         pauseController.ActivePause = true;
         controlls.ControllsActive = true;
         cameraControll.CameraControlled = true;
+        SoundTrack.Play();
     }
 }
