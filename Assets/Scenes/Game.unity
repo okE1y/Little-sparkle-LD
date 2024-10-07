@@ -5645,7 +5645,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &440619460
 PrefabInstance:
@@ -6672,7 +6672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff068bb8975bb54ba2e2841ae04a653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutsceneActive: 0
+  CutsceneActive: 1
   BaseAnimator: {fileID: 629667383}
   gameManager: {fileID: 1811031128}
 --- !u!1001 &633315281
@@ -11063,7 +11063,7 @@ Transform:
   m_LocalScale: {x: 0.4142, y: 8.3173, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1595490687
 BoxCollider2D:
@@ -28777,7 +28777,7 @@ Transform:
   - {fileID: 1642692648509341963}
   - {fileID: 177100004}
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3755290843603973572
 SpriteRenderer:
