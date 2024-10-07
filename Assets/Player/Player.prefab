@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4481781811250033047}
   - component: {fileID: 4481781811250033040}
   - component: {fileID: 5647797729085797689}
+  - component: {fileID: 2039743276}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -179,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wireSpeed: 20
+  animator: {fileID: 8395132699080707123}
 --- !u!114 &5647797729085797689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +191,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af212fcef4770c343b3e015112349064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Render: {fileID: 743427971752375301}
+--- !u!114 &2039743276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481781811250033134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad288979e712e24ca69b28b7ad8fa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5043834966287788840
@@ -277,7 +292,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &8395132699080707123
 Animator:

@@ -12,6 +12,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private int _currentRoom;
     public int CurrentRoom { get => _currentRoom; }
 
+    private PlayerReset playerReset;
+
     public void TransferPlayer(Room from, Room to)
     {
         from.DisableRoom();
@@ -24,6 +26,8 @@ public class RoomManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(WaitTwoFrames());
+
+        playerReset = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerReset>();
     }
 
     private IEnumerator WaitTwoFrames()
@@ -37,6 +41,12 @@ public class RoomManager : MonoBehaviour
                 Rooms[i].DisableRoom();
             }
         }
+    }
+
+    public void ResetCurrentLevel()
+    {
+        Rooms[CurrentRoom].ResetRoom();
+        playerReset.ResetPlayer(Rooms[CurrentRoom]);
     }
 
 #if UNITY_EDITOR

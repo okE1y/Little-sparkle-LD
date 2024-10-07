@@ -12,6 +12,8 @@ public class Room : MonoBehaviour
 
     private List<RoomControllable> Entities = new List<RoomControllable>();
 
+    public Transform StartPointOfLevel;
+
     public Transform GetTransform { get
     {
         if (_transform == null) _transform = transform;
