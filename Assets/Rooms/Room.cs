@@ -61,6 +61,7 @@ public class Room : MonoBehaviour
     private IEnumerator WaitOneFrames()
     {
         yield return null;
+        yield return null;
         GetComponent<Collider2D>().enabled = false;
         yield break;
     }

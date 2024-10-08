@@ -9,6 +9,7 @@ public class PauseController : MonoBehaviour
     private Canvas PauseCanvas;
     private MenuMenager menuMenager;
     private Controlls controlls;
+    private PlayerInteract playerInteract;
 
     public bool ActivePause = true;
 
@@ -17,6 +18,7 @@ public class PauseController : MonoBehaviour
         PauseCanvas = GetComponent<Canvas>();
         menuMenager = GetComponent<MenuMenager>();
         controlls = GameObject.FindGameObjectWithTag("Player").GetComponent<Controlls>();
+        playerInteract = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>();
     }
 
     public void ResumePause()
@@ -30,6 +32,7 @@ public class PauseController : MonoBehaviour
             controlls.ControllsActive = true;
             menuMenager.ActiveMenu = false;
             PauseCanvas.enabled = false;
+            playerInteract.ActiveInteraction = true; // bug fix
         }
     }
 
@@ -39,6 +42,7 @@ public class PauseController : MonoBehaviour
         {
             if (!pauseEnabled)
             {
+                playerInteract.ActiveInteraction = false; // bug fix
                 pauseEnabled = true;
                 Time.timeScale = 0f;
 
